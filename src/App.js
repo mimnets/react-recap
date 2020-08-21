@@ -6,21 +6,29 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {/* User Defined Component declare */}
+        <MyComponent></MyComponent>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+      
       </header>
     </div>
   );
+}
+
+// User defined component 
+// Component is case sensative : You must type the component name in Capital later, otherwise it will not work
+function MyComponent(){
+  const myComponentStyle = { // We can declare style a component
+    border: '2px solid white',
+    margin: '5px 5px',
+    padding: '5px 5px'
+  }
+  return (
+    <div style={myComponentStyle}>
+      <h1>This is a user defined Component</h1>
+    </div>
+  )
 }
 
 export default App;
