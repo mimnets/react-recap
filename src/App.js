@@ -20,7 +20,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         {/* Component property or props, for passing data through component */}
         {
-        nayoks.map(nk => <Nayok name={nk.name} age={nk.age}></Nayok>)  
+        nayoks.map(nk => <Nayok name={nk.name} key={nk.id} age={nk.age}></Nayok>)  
         }
         <MovieCounter></MovieCounter>
       
