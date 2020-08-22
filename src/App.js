@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nayoks = ['Jashim', 'Monir', 'Sakib Khan']
+  const nayoks = [{name:'Jashim', age:35}, {name:'Monir', age: 26}, {name:'Sakib Khan', age:45}]
   return (
     <div className="App">
       <header className="App-header">
@@ -11,10 +11,9 @@ function App() {
         <MyComponent></MyComponent>
         <img src={logo} className="App-logo" alt="logo" />
         {/* Component property or props, for passing data through component */}
-        <Nayok name={nayoks[1]}></Nayok>
-        <Nayok name={nayoks[0]}></Nayok>
-        <Nayok></Nayok>
-        <Nayok></Nayok>
+        {
+        nayoks.map(nk => <Nayok name={nk.name} age={nk.age}></Nayok>)  
+        }
         <MovieCounter></MovieCounter>
       
       </header>
@@ -56,7 +55,7 @@ function Nayok(props){ // Pass function parameter props as component property. W
   return (
     <div style={nayokStyle}>
       <h1>Ami Nayok : {props.name}</h1> {/* props.name - Passing component property */}
-      <h5>Amar Nayika Hosse : </h5>
+      <h5>I act in movies {props.age} years</h5>
     </div>
   )
 }
