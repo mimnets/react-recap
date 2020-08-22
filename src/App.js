@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nayoks = [{name:'Jashim', age:35}, {name:'Monir', age: 26}, {name:'Sakib Khan', age:45}]
+  const [nayoks, setNayoks] = useState([])
+  useEffect(()=> {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => setNayoks(data))
+  },[])
+
+  // const nayoks = [{name:'Jashim', age:35}, {name:'Monir', age: 26}, {name:'Sakib Khan', age:45}]
+
   return (
     <div className="App">
       <header className="App-header">
